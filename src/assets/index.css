@@ -1,0 +1,177 @@
+@import "setup.css";
+*,
+body,
+html {
+  font-family: sans-serif;
+}
+.container {
+  display: flex;
+  max-width: 1260px;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.container .left-side,
+.container .right-side {
+  width: 55%;
+  padding: 2rem;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  position: relative;
+}
+.container .left-side {
+  width: 45%;
+  border-right: 0;
+}
+.container .right-side .right-side__wrapper .todo-list {
+  height: calc(100vh - 250px);
+  overflow: hidden;
+  overflow-y: auto;
+}
+.container .right-side .todo-item {
+  margin-bottom: 15px;
+}
+.container .right-side .todo-item .todo-expand-item,
+.container .right-side .todo-item .todo-expand-content {
+  padding: 25px;
+  border: 1px solid #000;
+}
+
+.container
+  .right-side
+  .todo-item
+  .todo-expand-item
+  .todo-expand-item__check-box {
+  width: 50px;
+}
+.container .right-side .todo-item .todo-expand-item .todo-expand-item__name {
+  flex: 1 0 155px;
+  word-break: break-all;
+}
+.container .right-side .todo-item .todo-expand-item .todo-expand-item__btn {
+  width: 32%;
+}
+.container
+  .right-side
+  .todo-item
+  .todo-expand-item
+  .todo-expand-item__btn
+  > button {
+  margin-left: 15px;
+}
+.container .right-side .todo-item .todo-expand-content {
+  border-top: none;
+}
+.container .right-side .bulk-action {
+  position: absolute;
+  padding: 25px;
+  width: 100%;
+  background: #ddd;
+  box-sizing: border-box;
+  bottom: 0;
+  left: 0;
+}
+.container .right-side .bulk-action .bulk-action__btn {
+  width: 30%;
+}
+
+.notification-container {
+  font-size: 14px;
+  box-sizing: border-box;
+  position: fixed;
+  width: 250px;
+  border: 1px solid #ddd;
+  box-shadow: 0px 0px 5px 1px #ddd;
+  background: #fff;
+  border-radius: 8px;
+  padding: 11px 15px;
+  height: 65px;
+  top: -100px;
+  right: -200px;
+}
+.notification-container .notification-title {
+  font-weight: bold;
+  margin-top: 0;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+.notification-container .notification-message {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+.top-right {
+  top: 12px;
+  right: 12px;
+  transition: transform 0.6s ease-in-out;
+  animation: toast-in-right 0.7s;
+}
+
+@media screen and (max-width: 1260px) {
+  .container {
+    max-width: 960px;
+    flex-wrap: wrap;
+  }
+  .container .left-side,
+  .container .right-side {
+    width: 100%;
+  }
+  .container .left-side {
+    border-right: 1px solid #000;
+    border-bottom: 0;
+  }
+  .container .right-side .todo-item .todo-expand-item .todo-expand-item__btn {
+    width: 20%;
+  }
+}
+@media screen and (max-width: 960px) {
+  .container {
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+  .container .left-side,
+  .container .right-side {
+    width: 100%;
+  }
+  .container .left-side {
+    border-right: 1px solid #000;
+    border-bottom: 0;
+  }
+  .container .right-side .todo-item .todo-expand-item .todo-expand-item__btn {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .container {
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+  .container .left-side,
+  .container .right-side,
+  .container .right-side .bulk-action {
+    padding: 1rem;
+  }
+  .container .right-side .todo-item .todo-expand-item,
+  .container .right-side .todo-item .todo-expand-content {
+    padding: 1rem 0.5rem;
+    flex-wrap: wrap;
+    justify-content: end;
+  }
+  .container
+    .right-side
+    .todo-item
+    .todo-expand-item
+    .todo-expand-item__check-box {
+    width: 35px;
+  }
+  .container .right-side .todo-item .todo-expand-item .todo-expand-item__btn,
+  .container .right-side .bulk-action .bulk-action__btn {
+    width: 50%;
+  }
+  .container .right-side .bulk-action {
+    position: fixed;
+  }
+  .container .right-side .right-side__wrapper {
+    margin-bottom: 50px;
+  }
+}
